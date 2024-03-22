@@ -26,12 +26,12 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
     
     - name: Build the Docker image
-      run: docker build --tag siliconvillage/node-firebase:latest --tag siliconvillage/node-firebase:"${{env.VERSION}}" sdk
+      run: docker build --tag siliconvillage/docker-firebase-emulator:latest --tag siliconvillage/docker-firebase-emulator:"${{env.VERSION}}" .
     
     
     
     - name: Push Docker Image
-      run: docker push siliconvillage/node-firebase:${{env.VERSION}}
+      run: docker push siliconvillage/docker-firebase-emulator:${{env.VERSION}}
 
     - name: Push Docker Image
-      run: docker push siliconvillage/node-firebase:latest
+      run: docker push siliconvillage/docker-firebase-emulator:latest
